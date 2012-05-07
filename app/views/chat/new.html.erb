@@ -1,7 +1,5 @@
 <h1>This is chat#new</h1>
-<p>There should be some text: <%= @nickname %></p>
-
-<%= @message%>
+<p><%= @nickname + " says: " + @message%></p>
 
 <%= form_tag '/chat/create' do %>
 	<%= label_tag "Your message: " %>
