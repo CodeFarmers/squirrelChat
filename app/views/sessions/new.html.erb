@@ -1,1 +1,8 @@
 <h3>Choose a nickname</h3>
+
+<%= form_tag sessions_path do %>
+	<%= label_tag :nickname %>
+	<%= text_field :nickname, params[:nickname] %>	
+
+	<%= submit_tag "Set nickname" %>
+<% end %>

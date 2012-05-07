@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
   end
   
   def create
+    @session = params[:session]
+    puts @session
+    redirect_to chat_path
   end
 
   def destroy
