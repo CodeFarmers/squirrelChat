@@ -2,7 +2,7 @@
 
 <%= form_tag sessions_path do %>
 	<%= label_tag :nickname %>
-	<%= text_field :nickname, params[:nickname] %>	
+	<%= text_field_tag :nickname %>	
 
 	<%= submit_tag "Set nickname" %>
 <% end %>

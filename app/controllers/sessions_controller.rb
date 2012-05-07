@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @session = params[:session]
-    puts @session
+    session[:tmp_nickname] = params[:nickname]
+    ##puts "This is the nickname: " + @nickname
     redirect_to chat_path
   end
 
