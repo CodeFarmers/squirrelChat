@@ -1,2 +1,11 @@
 <h1>This is chat#new</h1>
 <p>There should be some text: <%= @nickname %></p>
+
+<%= @message%>
+
+<%= form_tag '/chat/create' do %>
+	<%= label_tag "Your message: " %>
+	<%= text_field_tag :message %>	
+
+	<%= submit_tag "Send" %>
+<% end %>
