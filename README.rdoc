@@ -1,1 +1,3 @@
-Just a simple chat with logfiles.
+squirrelChat
+
+Just a simple chatbox with logfiles.

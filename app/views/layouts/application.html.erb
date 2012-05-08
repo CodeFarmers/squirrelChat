@@ -7,6 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+/* test to see if bootstrap works */
+	<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "squirrelChat", '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home",    '#' %></li>
+          <li><%= link_to "Help",    '#' %></li>
+          <li><%= link_to "Sign in", '#' %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
 
 <%= yield %>
 <%= debug(params) if Rails.env.development? %>
