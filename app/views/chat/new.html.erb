@@ -1,6 +1,13 @@
 <h1>This is chat#new</h1>
 <p><%= @nickname + " says: " + @message_list%></p>
 
+<p>Inhoud van file:</p> 
+
+<% if @lines%>
+	<% @lines.each do |l| %>
+		<%= l %>
+	<% end %>
+<% end %>
 <%= form_tag '/chat/create' do %>
 	<%= label_tag "Your message: " %>
 	<%= text_field_tag :message %>
