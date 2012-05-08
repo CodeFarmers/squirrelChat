@@ -10,6 +10,7 @@ gem 'sqlite3'
 
 group :development, :test do
   gem 'rspec-rails', '2.9.0'
+  gem 'awesome_print'
 end
 
 

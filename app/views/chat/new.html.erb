@@ -1,9 +1,10 @@
 <h1>This is chat#new</h1>
-<p><%= @nickname + " says: " + @message%></p>
+<p><%= @nickname + " says: " + @message_list%></p>
 
 <%= form_tag '/chat/create' do %>
 	<%= label_tag "Your message: " %>
-	<%= text_field_tag :message %>	
+	<%= text_field_tag :message %>
+	<%= hidden_field_tag 'message_list', @message_list  %>	
 
 	<%= submit_tag "Send" %>
 <% end %>
