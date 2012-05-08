@@ -1,3 +1,10 @@
-squirrelChat
+=squirrelChat
+---
+===Description
+Just a simple chatbox with saved history for easy collaboration.
+--
 
-Just a simple chatbox with logfiles.
+===Goal:
+A simple chatbox that saves and can display the entire chat history.
+When you come online it will show you an overview of messages that were sent while you were offline and/or the last X messages.
+This makes it easy to collaborate on a project since you can chat in realtime or send notes, updates or reminders when the other people are offline.
