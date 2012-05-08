@@ -13,10 +13,10 @@ class ChatController < ApplicationController
     @message_list = params[:message_list]
     
     @message_list = @message_list << " | " + @message
-    ap @message_list
+    
     
     ##TODO: This is where we could write the message to a file
-    ##session[:tmp_message] = "a testmessage in the create action"  ##params[:nickname]
+    
     session[:tmp_message_list] = @message_list
     redirect_to chat_path
   end
