@@ -1,17 +1,15 @@
-<h1>This is chat#new</h1>
-<p><%= @nickname + " says: " + @message_list%></p>
-
-<p>Inhoud van file:</p> 
+<h1>squirrelChat</h1>
 
 <% if @lines%>
 	<% @lines.each do |l| %>
-		<%= l %>
+		<%= l %><br />
 	<% end %>
 <% end %>
+
 <%= form_tag '/chat/create' do %>
 	<%= label_tag "Your message: " %>
 	<%= text_field_tag :message %>
-	<%= hidden_field_tag 'message_list', @message_list  %>	
-
+	<%= hidden_field_tag :nickname, @nickname %>
+	
 	<%= submit_tag "Send" %>
 <% end %>
