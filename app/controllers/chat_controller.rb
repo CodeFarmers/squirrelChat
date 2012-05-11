@@ -2,7 +2,7 @@ class ChatController < ApplicationController
   require 'awesome_print'
   
   def new
-    @nickname = session[:tmp_nickname]
+    @nickname = session[:tmp_nickname] || "Anonymous"
     @@lines = ""
     
     if File.exist?("log/chat.log")
