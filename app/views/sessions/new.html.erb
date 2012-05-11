@@ -1,8 +1,32 @@
+<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">SquirrelChat</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="chat/">Chat</a></li>
+              <li class="active"><a href="/">Set Nickname</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+<div class="container">
+<div class="hero-unit">
+
 <h3>Choose a nickname</h3>
 
 <%= form_tag sessions_path do %>
 	<%= label_tag :nickname %>
 	<%= text_field_tag :nickname %>	
 
-	<%= submit_tag "Set nickname" %>
+	<%= submit_tag "Set nickname", :class => "btn btn-primary" %>
 <% end %>
+</div>
+</div>

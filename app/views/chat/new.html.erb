@@ -1,15 +1,41 @@
-<h1>squirrelChat</h1>
+<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">SquirrelChat</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="chat/">Chat</a></li>
+              <li><a href="/">Set Nickname</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
+<div class="container">
+<div class="hero-unit">
+<h3>SquirrelChat</h3> 
+<br />
+<p>
 <% if @lines%>
 	<% @lines.each do |l| %>
 		<%= l %><br />
 	<% end %>
 <% end %>
+</p>
 
 <%= form_tag '/chat/create' do %>
 	<%= label_tag "Your message: " %>
 	<%= text_field_tag :message %>
 	<%= hidden_field_tag :nickname, @nickname %>
 	
-	<%= submit_tag "Send" %>
+	<%= submit_tag "Send", :class => "btn btn-primary" %>
 <% end %>
+</div>
+</div>
+
