@@ -1,6 +1,6 @@
 class ChatController < ApplicationController
   def new
-    @nickname = session[:tmp_nickname] || "Anonymous"
+    @nickname = session[:tmp_nickname] || "Anonymous" #Still wonder why this anonymous thing's not working
     @@lines = ""
     
     if File.exist?("log/chat.log")
@@ -24,5 +24,17 @@ class ChatController < ApplicationController
     
     ##This redirects to the new action in this controller
     redirect_to chat_path
+  end
+  
+  def set_nickname
+    session[:tmp_nickname] = params[:nickname]
+    ## This redirects to the 'new' action in the chatController
+    redirect_to chat_path  
+  end
+  
+  def new_nickname
+    #The root url in routes.rb is set to this action in this controller
+    #Since no explicit render or redirect happens here, rails will try to render "new_nickname.html.erb" in "/app/views/chat/"
+    #This is equivalent to explicitly typing "render 'new_nickname'"
   end
 end
