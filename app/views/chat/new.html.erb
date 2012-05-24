@@ -23,7 +23,7 @@
 <h3><u>SquirrelChat</u></h3> 
 <br />
 <p>
-<% if @lines%>
+<% if @lines != ""%>
 	<% @lines.each do |l| %>
 		<%= l %><br />
 	<% end %>

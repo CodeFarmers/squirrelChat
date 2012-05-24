@@ -16,5 +16,16 @@ describe "Chat" do
       visit '/'
       page.should have_button "Set nickname"
     end
+    
+    it "can set a nickname" do
+      visit '/'
+      fill_in "nickname", :with => "HomoYannick"
+      click_button "Set nickname"
+      page.should have_content('Your nickname: "HomoYannick"')
+    end
+    
+    it "should set the nickname to 'Anonymous' if the nickname field is left empty" do
+        # TODO: Fix this bug
+    end
   end
 end

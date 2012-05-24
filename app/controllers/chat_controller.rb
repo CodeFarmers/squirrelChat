@@ -2,14 +2,8 @@ class ChatController < ApplicationController
   def new
     @nickname = session[:tmp_nickname] || "Anonymous" #Still wonder why this anonymous thing's not working
     @@lines = ""
+    read_log_or_create_new
     
-    if File.exist?("log/chat.log")
-      f = File.open("log/chat.log")
-      @@lines = f.readlines
-    else
-      chatlog = File.new("log/chat.log", "w")
-      chatlog.close
-    end
     
     @lines = @@lines
   end
@@ -37,4 +31,16 @@ class ChatController < ApplicationController
     #Since no explicit render or redirect happens here, rails will try to render "new_nickname.html.erb" in "/app/views/chat/"
     #This is equivalent to explicitly typing "render 'new_nickname'"
   end
+  
+  private
+    def read_log_or_create_new
+        if File.exist?("log/chat.log")
+        f = File.open("log/chat.log")
+        @@lines = f.readlines
+      else
+        chatlog = File.new("log/chat.log", "w")
+        chatlog.close
+      end  
+    end
 end
+  
