@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     
-    unless params[:nickname]
+    if @user.nickname == ""
       @user.nickname = "Anonymous"
     end
     
