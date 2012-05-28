@@ -9,10 +9,10 @@
           <a class="brand" href="#">SquirrelChat</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="/chat/">Chat</a></li>
+              <li class="active"><a href=<%= new_post_path %>>Chat</a></li>
               <li><a href="/">Set Nickname</a></li>
             </ul>
-            <p class="navbar-text pull-right">Your nickname: "<%= @nickname%>"</p>
+            <p class="navbar-text pull-right">Your nickname: "<%= current_user.nickname %>"</p>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -22,23 +22,25 @@
 <div class="hero-unit">
 <h3><u>SquirrelChat</u></h3> 
 <br />
-<p>
-<% if @lines != ""%>
-	<% @lines.each do |l| %>
-		<%= l %><br />
+
+<div id="chatbox">
+<% if @posts %>
+	<% @posts.each do |p| %>
+		<%= current_user.nickname %> says: <%= p.content %><br />		
 	<% end %>
 <% end %>
-</p>
+</div>
 
-<%= form_tag '/chat/create' do %>
-	<%= label_tag "Your message: " %>
-	<%= text_field_tag :message %>
-	<%= hidden_field_tag :nickname, @nickname %>
+
+
+<%= form_for @post do |p| %>
+	<%= p.label "Your message: " %>
+	<%= p.text_field :content %>
 	
 	<%= submit_tag "Send", :class => "btn btn-primary" %>
 <% end %>
 
+
 <br />
 </div>
 </div>
-

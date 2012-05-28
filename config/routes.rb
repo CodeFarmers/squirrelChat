@@ -1,5 +1,10 @@
 SquirrelChat::Application.routes.draw do
-  resources :sessions, only: [:new, :create, :destroy]
+  
+  resources :users
+  resources :posts
+  
+
+  
   match '/chat', to: 'chat#new'
   match '/chat/create', to: 'chat#create'
   match '/set_nickname', to: 'chat#set_nickname'
@@ -53,7 +58,7 @@ SquirrelChat::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'chat#new_nickname'
+   root :to => 'users#new'
 
   # See how all your routes lay out with "rake routes"
 
