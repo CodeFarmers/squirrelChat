@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   def new
     @current_user = current_user
     ap "In PostsController#new: " + current_user.to_s
-    ap "Nickname: " + @current_user.nickname
     @posts = Post.all
     @post = Post.new
   end

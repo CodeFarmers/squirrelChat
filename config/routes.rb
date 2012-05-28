@@ -4,11 +4,6 @@ SquirrelChat::Application.routes.draw do
   resources :posts
   
 
-  
-  match '/chat', to: 'chat#new'
-  match '/chat/create', to: 'chat#create'
-  match '/set_nickname', to: 'chat#set_nickname'
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
