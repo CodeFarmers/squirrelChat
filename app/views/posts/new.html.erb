@@ -27,20 +27,16 @@
 <h3><u>SquirrelChat</u></h3> 
 <br />
 
-
-<% if @posts %>
-	<% @posts.each do |p| %>
-		<%= p.nickname %> says: <%= p.content %><br />		
-	<% end %>
-<% end %>
-
-
+<% if @posts_with_nickname %>
+    <% @posts_with_nickname.each do |p| %>
+        <%= p[:nickname] %> says: <%= p[:content] %><br />
+    <% end %>
+<% end%>
 
 
 <%= form_for @post do |p| %>
 	<%= p.label "Your message: " %>
 	<%= p.text_field :content %>
-	<%= p.hidden_field :nickname, :value => current_user.nickname %>
 	<%= submit_tag "Send", :class => "btn btn-primary" %>
 <% end %>
 

@@ -11,15 +11,14 @@ class UsersController < ApplicationController
       @user.nickname = "Anonymous"
     end
     
-    if @user.save
-      #handle successful save
-      ap "In UsersController#create " + @user.nickname
-      store_user_for_session(@user)
-      redirect_to new_post_path
+    if !User.exists?(:nickname => @user.nickname)
+      @user.save
     else
-      # If saving the user fails, show the new page again
-      render '/users/new'
+      @user = User.find_by_nickname(@user.nickname)    
     end
+      store_user_for_session(@user)
+      redirect_to new_post_path 
+    
     
   end
 end

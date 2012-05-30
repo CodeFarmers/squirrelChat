@@ -9,7 +9,8 @@ module UsersHelper
     if @current_user
       ap "Current user nickname: " + @current_user.nickname.to_s
     end
-    @current_user ||= User.find(session[:user_id])    
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+        
   end
   
   def store_user_for_session(user)
