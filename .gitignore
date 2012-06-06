@@ -17,3 +17,4 @@
 
 # Ignore aptana project file
 /.project
+coverage/

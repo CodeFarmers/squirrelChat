@@ -7,6 +7,8 @@ describe User do
   subject { @user }
 
   it { should respond_to(:nickname) }
+  it { should respond_to(:posts) }
+  
   it { should be_valid }
   
   describe "when nickname is not present" do
@@ -14,8 +16,8 @@ describe User do
     it { should_not be_valid }
   end
   
-  describe "when name is too long" do
+  describe "when nickname is too long" do
     before { @user.nickname = "a" * 51 }
     it { should_not be_valid }
-  end
+  end  
 end
