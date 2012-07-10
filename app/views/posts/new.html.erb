@@ -26,13 +26,13 @@
 <div class="hero-unit">
 <h3><u>SquirrelChat</u></h3> 
 <br />
-
-<% if @posts_with_nickname %>
-    <% @posts_with_nickname.each do |p| %>
-        <%= p[:nickname] %> says: <%= p[:content] %><br />
-    <% end %>
-<% end%>
-
+    <div id="chatbox">
+        <% if @posts_with_nickname %>
+            <% @posts_with_nickname.each do |p| %>
+                <%= p[:nickname] %> says: <%= p[:content] %><br />
+            <% end %>
+        <% end%>
+    </div>
 
 <%= form_for @post do |p| %>
 	<%= p.label "Your message: " %>
