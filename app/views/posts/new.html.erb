@@ -26,19 +26,16 @@
 <div class="hero-unit">
 <h3><u>SquirrelChat</u></h3> 
 <br />
-    <div id="chatbox">
-        <% if @posts_with_nickname %>
-            <% @posts_with_nickname.each do |p| %>
-                <%= p[:nickname] %> says: <%= p[:content] %><br />
-            <% end %>
-        <% end%>
-    </div>
+  <div id="chatbox">
+  <%= render(:partial => "chatbox") %>
+  </div>
+<br />
 
-<%= form_for @post do |p| %>
+  <%= form_for @post, remote: true do |p| %>
 	<%= p.label "Your message: " %>
 	<%= p.text_field :content %>
 	<%= submit_tag "Send", :class => "btn btn-primary" %>
-<% end %>
+  <% end %>
 
 
 <br />

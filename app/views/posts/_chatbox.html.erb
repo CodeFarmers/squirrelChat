@@ -1,0 +1,6 @@
+<% if @posts %>
+  <% @posts.each do |p| %>
+      <% user = User.find(p.user_id) %>
+      <%= user.nickname %> says: <%= p.content %><br />
+  <% end %>
+<% end%>
