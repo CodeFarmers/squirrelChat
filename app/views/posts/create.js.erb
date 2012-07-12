@@ -1,4 +1,8 @@
-$("#chatbox").html("<%= escape_javascript(render :partial => 'chatbox') %>");
+//This broadcast function can be found in application_helper.rb
+//It broadcasts the AJAX update to all clients listening to the faye server
+<% broadcast "/posts/new" do %>
+    $("#chatbox").html("<%= escape_javascript(render partial: "chatbox") %>");
+<% end %>
 $("#new_post")[0].reset();
 
 
