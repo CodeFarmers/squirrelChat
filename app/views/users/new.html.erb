@@ -1,29 +1,4 @@
-<div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">SquirrelChat</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li><a href=<%= new_post_path %>>Chat</a></li>
-              <li class="active"><a href="/">Set Nickname</a></li>
-            </ul>
-            <% if current_user %>
-            	<p class="navbar-text pull-right">Your nickname:
-            		"<%= current_user.nickname %>"
-            	</p>
-            <% end %>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
 
-<div class="container">
-<div class="hero-unit">
 
 <h3>Choose a nickname</h3>
 
@@ -32,5 +7,4 @@
 	<%= f.text_field :nickname %>
 	<%= f.submit "Set nickname", :class => "btn btn-primary" %>
 <% end %>	
-</div>
-</div>
+
